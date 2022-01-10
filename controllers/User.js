@@ -44,9 +44,9 @@ exports.signup = (req, res, next) => {
             .json({ message: "Utilisateur créé et sauvegardé" })
         )
 
-        .catch((error) => res.status(status.BAD_REQUEST).json({ error }));
+        .catch((error) => res.status(400).json({ error }));
     })
-    .catch((error) => res.status(status.INTERNAL_SERVER_ERROR).json({ error }));
+    .catch((error) => res.status(500).json({ error }));
 };
 
 exports.login = (req, res, next) => {
